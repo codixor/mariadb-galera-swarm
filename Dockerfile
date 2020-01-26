@@ -3,6 +3,8 @@ FROM mariadb:10.4
 # Download blocked from http://www.quicklz.com/qpress-11-linux-x64.tar
 COPY bin/qpress-11-linux-x64.tar /tmp/qpress.tar
 
+COPY sysctl.conf /etc/
+
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends --no-install-suggests \
